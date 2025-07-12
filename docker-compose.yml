@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+
+  backend:
+    build: ./backend
+    container_name: backend
+    expose:
+      - 8000
+    
+    env_file:
+      - .env 
+    command: sh -c "uv run gunicorn --bind 0.0.0.0:8000 AboutSite.wsgi"
+    restart: unless-stopped
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./backend/static:/backend/staticfiles
+
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    
+    restart: unless-stopped
