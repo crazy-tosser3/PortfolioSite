@@ -31,7 +31,7 @@
         <h4>{{ r.title }}</h4>
         <p>{{ r.description }}</p>
         <p>{{ r.pub_date }}</p>
-        <a href="#">Смотреть</a>
+        <a href="{{ r.prj_git_url }}" target="_blank">Смотреть</a>
       </div>
       {% endfor %}
       {% else %}
