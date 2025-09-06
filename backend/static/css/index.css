@@ -149,7 +149,6 @@ nav a:hover {
   }
 }
 
-
 .hero-grid {
   position: absolute;
   top: 0;
@@ -159,7 +158,6 @@ nav a:hover {
   z-index: 1;
   pointer-events: auto; 
 }
-
 
 @keyframes fadeIn {
   from {
@@ -172,114 +170,139 @@ nav a:hover {
   }
 }
 
-
 .projects {
-  padding: 2rem 1rem;  max-width: 900px;
+  padding: 3rem 1rem;
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .projects h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: #ffffff;
   text-align: center;
+  position: relative;
 }
 
+.projects h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #666, #333);
+  border-radius: 2px;
+}
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
-
 .card {
-  background: rgba(30, 30, 30, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
 }
 
 .card:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(40, 40, 40, 0.7);
 }
 
 .card h4 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: #ffffff;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.card h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: width 0.3s ease;
+}
+
+.card:hover h4::after {
+  width: 80px;
 }
 
 .card p {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #d0d0d0;
-  line-height: 1.5;
-  margin-bottom: 0.6rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.card p:last-of-type {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 1.5rem;
 }
 
 .card a {
   color: #d0d0d0;
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.85rem;
-  padding: 6px 12px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
-  display: inline-block; 
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
+
 .card a:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.05);
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.8rem;
-  color: #888;
-  background: rgba(18, 18, 18, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: auto;
-}
-
-.link_re {
-  color: #888 !important;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.85rem;
-  padding: 12px 20px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
-}
-
-.link_re:hover {
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .empty-message {
   position: relative;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #999;
-  margin-top: 1rem;
+  margin-top: 2rem;
   cursor: default;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 2rem;
+  grid-column: 1 / -1;
 }
 
 .empty-message:hover {
@@ -292,7 +315,7 @@ footer {
   position: absolute;
   width: 0%;
   height: 2px;
-  bottom: -4px;
+  bottom: 10px;
   left: 50%;
   background-color: #888888;
   transition: width 0.3s ease, left 0.3s ease;
@@ -301,6 +324,40 @@ footer {
 .empty-message:hover::after {
   width: 100%;
   left: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+  background: rgba(18, 18, 18, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 3rem;
+}
+
+.link_re {
+  color: #888 !important;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 12px 24px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link_re:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
@@ -338,32 +395,60 @@ footer {
   }
 
   .projects {
-    padding: 0.5rem;
+    padding: 1rem;
   }
 
   .projects h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .project-grid {
     grid-template-columns: 1fr;
-    gap: 0.8rem;
+    gap: 1rem;
+    padding: 0.5rem;
   }
 
   .card {
-    padding: 0.8rem;
+    padding: 1.2rem;
   }
 
   .card h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .card p, .card a {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .empty-message {
+    font-size: 1.1rem;
+    padding: 1.5rem;
   }
 
   footer {
-    padding: 0.8rem;
-    font-size: 0.75rem;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .link_re {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  .projects h3 {
+    font-size: 1.3rem;
   }
 }

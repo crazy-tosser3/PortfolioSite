@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["ТУТ ДОМЕНЫ"]
+ALLOWED_HOSTS = ["Тут впишите хосты"]
 
 
 # Application definition
@@ -132,5 +132,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
-    """ТУТ УКАЖИТЕ ДОМЕНЫ И 127.0.0.1"""
+    """Тут впишите хосты"""    
 ]

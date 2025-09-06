@@ -8,9 +8,9 @@ def index(req):
 
     related = []
 
-    for p in prj[::5]:
-        if(len(p.description) > 10):
-            p.description = p.description[:20]+' . . .'
+    for p in prj:
+        # if(len(p.description) > 10):
+        #     p.description = p.description[:20]+' . . .'
         
         related.append(p)
 
